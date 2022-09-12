@@ -12,7 +12,7 @@ export default async function ({name}) {
   setTimeout(() => {
     if (name !== 'login' && !auth.currentUser) return navigateTo('/login')
     // save current user in local state 
-  }, 300)
+  }, 500)
 
 
 

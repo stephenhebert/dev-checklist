@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray">
+  <div>
     <NuxtPage />
   </div>
 </template>
@@ -21,8 +21,9 @@ export const firebaseApp = initializeApp(firebaseConfig);
 
 <style>
 
-body, html { 
-  @apply bg-gray;
+body { 
+  background-color: #ccc;
+  font-size: 16px;
 
 }
 </style>
