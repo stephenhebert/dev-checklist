@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <!-- <NuxtWelcome /> -->
+  <div class="bg-gray">
     <NuxtPage />
   </div>
 </template>
 
 <script>
+// import '@unocss/reset/tailwind.css'
+
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyBlKOFUyYepKkE_982rIjq4umOauj4avtY",
@@ -17,3 +18,11 @@ const firebaseConfig = {
 };
 export const firebaseApp = initializeApp(firebaseConfig);
 </script>
+
+<style>
+
+body, html { 
+  @apply bg-gray;
+
+}
+</style>

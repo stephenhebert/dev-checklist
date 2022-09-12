@@ -1,36 +1,20 @@
-import { getAuth, signInWithRedirect, GithubAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 
-export default function (context) {
-
-  console.log('context', context)
-  
+export default async function ({name}) {
 
   const provider = new GithubAuthProvider();
 
-
+  // load state from local storage?
   const auth = getAuth();
-  signInWithRedirect(auth, provider);
 
-  // signInWithPopup(auth, provider)
-  //   .then((result) => {
-  //     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-  //     const credential = GithubAuthProvider.credentialFromResult(result);
-  //     const token = credential.accessToken;
+  // it takes 300ms to return current user
+  // is it worth a blocking wait?
+  setTimeout(() => {
+    if (name !== 'login' && !auth.currentUser) return navigateTo('/login')
+    // save current user in local state 
+  }, 300)
 
-  //     // The signed-in user info.
-  //     const user = result.user;
-  //     console.log('user', user)
-  //     // ...
-  //   }).catch((error) => {
-  //     // Handle Errors here.
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //     // The email of the user's account used.
-  //     const email = error.customData.email;
-  //     // The AuthCredential type that was used.
-  //     const credential = GithubAuthProvider.credentialFromError(error);
-  //     // ...
-  //   });
+
 
 
   
