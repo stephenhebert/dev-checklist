@@ -6,33 +6,29 @@
 
 </template>
 
+<script setup>
+import { useUser } from '~/stores/user'
+const { user } = useUser()
+if (user.value?.uid) await navigateTo('/')
+</script>
+
 <script>
 import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
-import { useUser } from '~/stores/user'
 export default {
-  setup() {
-    const user = useUser();
-    return { user }
-  },
   methods: {
     async loginWithGithub() {
       const provider = new GithubAuthProvider();
       const auth = getAuth();
       try { 
         const result = await signInWithPopup(auth, provider)
-        // The signed-in user info.
         const user = result.user;
-        console.log('user', user)
-        // update local storage?
         this.user.setUser(user)
         this.$router.push('/')
       }
       catch(error) {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-
-        }
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      }
     }
   }
 }

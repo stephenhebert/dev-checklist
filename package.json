@@ -12,7 +12,8 @@
     "@unocss/nuxt": "^0.45.18",
     "@unocss/preset-icons": "^0.45.19",
     "@vueuse/core": "^9.2.0",
-    "nuxt": "3.0.0-rc.9"
+    "nuxt": "3.0.0-rc.9",
+    "sass": "^1.54.9"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.2",

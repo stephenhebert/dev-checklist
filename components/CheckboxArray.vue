@@ -1,5 +1,5 @@
 <template>
-  <div data-checkbox-array class="flex flex-row justify-around gap-2 mx-1">
+  <div data-checkbox-array class="flex flex-row justify-around items-center min-h-full">
     <BaseCheckbox v-for="i of 6" :key="i" v-model="reversedBits[i-1]" />
   </div>
 </template>

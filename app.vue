@@ -19,11 +19,10 @@ const firebaseConfig = {
 export const firebaseApp = initializeApp(firebaseConfig);
 </script>
 
-<style>
-
+<style lang="scss">
+@import 'styles/main.scss';
 body { 
   background-color: #ccc;
   font-size: 16px;
-
 }
 </style>

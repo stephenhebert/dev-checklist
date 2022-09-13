@@ -1,21 +1,8 @@
-import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import { useUser } from '~/stores/user'
 
-export default async function ({name}) {
+export default function ({ name }) {
 
-  const provider = new GithubAuthProvider();
+  const { user } = useUser()
+  // if (user.value.uid !== undefined) return navigateTo('/login')
 
-  // load state from local storage?
-  const auth = getAuth();
-
-  // it takes 300ms to return current user
-  // is it worth a blocking wait?
-  setTimeout(() => {
-    if (name !== 'login' && !auth.currentUser) return navigateTo('/login')
-    // save current user in local state 
-  }, 500)
-
-
-
-
-  
 }

@@ -1,8 +1,8 @@
 export default [
-  'Remembered',
-  'Understood',
-  'Applied',
-  'Analyzed',
-  'Evaluated',
-  'Created',
+  'remember',
+  'understand',
+  'apply',
+  'analyze',
+  'evaluate',
+  'create',
 ]

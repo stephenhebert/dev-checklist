@@ -1,19 +1,20 @@
-import { defineStore } from 'pinia'
+import { useStorage } from '@vueuse/core'
 
-export const useUser = defineStore('user', {
-  state: () => ({
+export function useUser() {
+    
+  const user = useStorage('user', {
     displayName: undefined,
     photoURL: undefined,
-    email: undefined
-  }),
+    email: undefined,
+    uid: undefined,
+  })
 
-  // configure caching in local storage
-
-  actions: {
-    setUser({ displayName, photoURL, email }) {
-      this.displayName = displayName
-      this.photoURL = photoURL
-      this.email = email
-    }
-  },
-})
+  const setUser = ({ displayName, photoURL, email, uid }) => {
+    user.value.displayName = displayName
+    user.value.photoURL = photoURL
+    user.value.email = email
+    user.value.uid = uid
+  }
+ 
+  return { user, setUser }
+}

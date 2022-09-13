@@ -1,0 +1,26 @@
+:root {
+  --clamped-width: clamp(145px, 40vw, 275px);
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.left {
+  flex-grow: 1;
+  padding: 4px 8px;
+  height: 100%;
+}
+
+.right {
+  width: var(--clamped-width);
+  height: 100%;
+  flex-shrink: 0;
+}
