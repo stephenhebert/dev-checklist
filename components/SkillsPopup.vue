@@ -1,12 +1,17 @@
 <template>
-    <div class="skill-popup absolute flex flex-col flex-gap-y-1 bg-white p-1 rounded-3 w-100vw">
-      <SkillsPopupRow />
-      <SkillsPopupRow />
-      <SkillsPopupRow />
-    </div>
+  <div ref="target" class="skill-popup absolute flex flex-col flex-gap-y-1 bg-white p-1 rounded-3 w-100vw z-10">
+    <SkillsPopupRow />
+    <SkillsPopupRow />
+    <SkillsPopupRow />
+  </div>
 </template>
 
-
+<script setup>
+// TODO: transition
+const target = ref(null)
+const emit = defineEmits(['close'])
+onClickOutside(target, () => emit('close'))
+</script>
 
 <style scoped lang="scss">
 .skill-popup :deep(.row) {

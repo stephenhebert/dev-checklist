@@ -13,6 +13,7 @@
     <template #right>
       <CheckboxArray v-model="count" />
     </template>
+    <!-- link to other issues, concepts -->
   </BaseRow>
 </template>
 
