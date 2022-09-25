@@ -8,7 +8,7 @@
 
 <script setup>
 import { useUser } from '~/stores/user'
-const { user } = useUser()
+const { user, setUser } = useUser()
 if (user.value?.uid) await navigateTo('/')
 </script>
 
@@ -22,7 +22,7 @@ export default {
       try { 
         const result = await signInWithPopup(auth, provider)
         const user = result.user;
-        this.user.setUser(user)
+        this.setUser(user)
         this.$router.push('/')
       }
       catch(error) {
