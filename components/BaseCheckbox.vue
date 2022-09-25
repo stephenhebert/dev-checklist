@@ -10,7 +10,6 @@
       shadow-md
       border-1
       flex
-      duration-100
     "
   :class="[computedOuterClasses]"
     >

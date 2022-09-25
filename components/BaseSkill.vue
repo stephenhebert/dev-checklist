@@ -4,7 +4,7 @@
       <BaseRow>
         <div class="flex flex-row items-center">
           <div class="header text-green-300" :class="{ open: isOpen }">{{ name }}</div>
-          <button @click="toggle" class="rounded-1/2 py-1 px-1"><div class="text-32px text-white duration-150" :class="[(isOpen ? 'i-mdi-eye-off-outline' : 'i-mdi-eye')]"></div></button>
+          <button @click="toggle" class="rounded-1/2 py-1 px-1"><div class="text-32px text-white" :class="[(isOpen ? 'i-mdi-eye-off-outline' : 'i-mdi-eye')]"></div></button>
         </div>
       </BaseRow>
       <SkillsPopup v-if="isOpen"/>
