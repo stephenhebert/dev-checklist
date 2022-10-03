@@ -1,0 +1,19 @@
+.formkit-form {
+  @apply flex flex-col flex-gap-2;
+}
+
+.formkit-label {
+  @apply fw-semibold text-sm;
+}
+
+.formkit-input {
+  @apply ring-1 ring-gray rounded px-2 py-1;
+}
+
+.formkit-help {
+  @apply text-xs text-gray-600;
+}
+
+.formkit-message {
+  @apply text-red text-sm fw-semibold;
+}
