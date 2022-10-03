@@ -1,3 +1,5 @@
+// import '@formkit/themes/genesis'
+
 .formkit-form {
   @apply flex flex-col flex-gap-2;
 }
@@ -17,3 +19,12 @@
 .formkit-message {
   @apply text-red text-sm fw-semibold;
 }
+
+.formkit-list-wrapper, 
+.formkit-group-wrapper {
+  @apply border-1 border-black-400 p-4 relative mt-3 rounded;
+  &-label {
+    @apply absolute text-sm fw-semibold top--3.5 bg-white p-1 px-2;
+  }
+}
+

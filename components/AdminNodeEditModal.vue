@@ -33,6 +33,42 @@
             validation-visibility="dirty"
           />
 
+          <div class="formkit-list-wrapper">
+            <div class="formkit-list-wrapper-label">Resources</div>
+            <FormKit 
+              type="list"
+              name="resources" 
+            >
+
+            <div class="formkit-group-wrapper">
+              <div class="formkit-group-wrapper-label">Resource #1</div>
+
+                <FormKit type="group">
+
+                  <FormKit
+                    type="text"
+                    name="name"
+                    label="Name"
+                    validation="required"
+                    validation-visibility="dirty"
+                  />
+
+                  <FormKit
+                    type="text"
+                    name="url"
+                    label="URL"
+                    validation="required"
+                    validation-visibility="dirty"
+                  />
+
+
+                </FormKit>
+          </div>
+
+
+            </FormKit>
+          </div>
+
           <div>{{ value }}</div>
         <!-- <div class="flex flex-row flex-gap-2">
           <button @click="close" class="fw-semibold p-2 border-1 rounded bg-blue border-blue-500 hover:bg-blue-500 color-white">Deactivate</button>
